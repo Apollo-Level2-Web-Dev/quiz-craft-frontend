@@ -1,23 +1,27 @@
-import { createSlice } from "@reduxjs/toolkit";
+// AddQuizSlice.js
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type TInitialState = {
+type TStepperInitialState = {
   activeStep: number;
 };
 
-const initialState: TInitialState = {
+const initialState: TStepperInitialState = {
   activeStep: 0,
 };
 
-const stepperSlice = createSlice({
+export const quizSlice = createSlice({
   name: "stepper",
   initialState,
   reducers: {
-    setActiveStepper: (state, action) => {
+    setActiveStep: (
+      state,
+      action: PayloadAction<TStepperInitialState["activeStep"]>
+    ) => {
       state.activeStep = action.payload;
     },
   },
 });
 
-export const { setActiveStepper } = stepperSlice.actions;
+export const { setActiveStep } = quizSlice.actions;
 
-export default stepperSlice.reducer;
+export default quizSlice.reducer;

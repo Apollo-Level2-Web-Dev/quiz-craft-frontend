@@ -1,14 +1,15 @@
 import { Toaster } from "react-hot-toast";
-import { NavbarDefault } from "./components/Navbar";
-import { TabsWithIcon } from "./components/Tabs";
+import Container from "./components/ui/Container";
+import { Navbar } from "./components/ui/Navbar";
+import { Tabs } from "./components/ui/Tabs";
 
 function App() {
   return (
-    <div className="container mx-auto">
-      <NavbarDefault />
-      <TabsWithIcon />
-      <Toaster />
-    </div>
+    <Container>
+      <Navbar />
+      <Tabs />
+      <Toaster/>
+    </Container>
   );
 }
 
